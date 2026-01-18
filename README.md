@@ -1,53 +1,81 @@
-# Selenium OTP Automation using ADB
+# 🔐 Selenium OTP Automation using ADB
 
-This project demonstrates end-to-end automation of an OTP-based login flow using:
+This project demonstrates end-to-end automation of an OTP-based login flow by combining web automation with mobile SMS reading.
 
-- Selenium WebDriver (UI Automation)
-- Java
-- TestNG
-- ADB (Android Debug Bridge)
-- Regular Expressions (for OTP extraction)
+---
 
-## Project Overview
+## 🛠 Tools & Technologies Used
 
-The framework automates:
-1. Launching the website.
-2. Entering mobile number.
-3. Triggering OTP.
-4. Reading OTP directly from Android SMS using ADB.
-5. Extracting the OTP dynamically using Regex.
+* 🌐 **Selenium WebDriver** – Automates browser actions (open site, click login, enter mobile number).
+* ☕ **Java** – Programming language used to build the framework.
+* 🧪 **TestNG** – Test execution and reporting framework.
+* 📱 **ADB (Android Debug Bridge)** – Connects the Android device to the system and reads SMS.
+* 🔍 **Regular Expressions (Regex)** – Extracts the OTP from the SMS text.
 
-This approach is useful for test environments where OTP bypass APIs are not available and mobile device integration is required.
+---
 
-## Tech Stack
+## 📋 Project Overview
 
-- Java 17
-- Selenium WebDriver
-- TestNG
-- Maven
-- WebDriverManager
-- Android ADB
-- Regex
+The framework automates the complete OTP login flow:
 
-## Framework Structure
+1. 🚀 **Launch the Website** – Opens the application in Chrome using Selenium.
+2. 📞 **Enter Mobile Number** – Automatically types the mobile number in the login field.
+3. 🔘 **Trigger OTP** – Clicks on the “Get OTP” button.
+4. 📨 **Read OTP from SMS** – Uses ADB to read incoming SMS directly from the connected Android phone.
+5. 🔢 **Extract OTP Using Regex** – Parses the SMS and extracts the 4–8 digit OTP dynamically.
 
-- base → Browser setup and teardown
-- pages → Page Object Model (LoginPage)
-- utils → OTP reading logic via ADB
-- tests → TestNG test cases
+This approach is useful in test environments where:
 
-## How to Run
+* ❌ OTP bypass APIs are not available.
+* 📱 Real device integration is required.
 
-1. Enable USB Debugging on Android device.
-2. Connect mobile to laptop.
-3. Ensure ADB is installed and `adb devices` shows your phone.
-4. Run the TestNG test class: `LoginWithOTPTest`.
+---
 
-## Key Highlight
+## 🧰 Tech Stack
 
-OTP is fetched automatically from real SMS inbox using ADB and parsed using Regex without any manual input.
+* ☕ Java 17
+* 🌐 Selenium WebDriver
+* 🧪 TestNG
+* 📦 Maven
+* 🚗 WebDriverManager
+* 📱 Android ADB
+* 🔍 Regex
 
-## Disclaimer
+---
 
-This implementation is for automation practice and test environment only.  
-In production, OTP should be handled via secure APIs or stubs.
+## 🏗 Framework Structure (POM)
+
+* 🧱 **base** → Browser setup and teardown
+* 📄 **pages** → Page Object Model (LoginPage and locators)
+* 🛠 **utils** → OTP reading logic using ADB and Regex
+* 🧪 **tests** → TestNG test classes
+
+---
+
+## ▶ How to Run
+
+1. 📱 Enable **USB Debugging** on your Android device.
+2. 🔌 Connect the mobile phone to the laptop using USB.
+3. 💻 Verify connection using `adb devices`.
+4. ▶ Run the TestNG class: `LoginWithOTPTest`.
+
+---
+
+## 🌟 Key Highlight
+
+✨ OTP is fetched automatically from the real SMS inbox.
+✨ No manual OTP entry is required.
+✨ Real-time extraction using Regex.
+✨ Integration of Selenium with Mobile using ADB.
+
+---
+
+## ⚠ Disclaimer
+
+This implementation is intended for:
+
+* 🧪 Automation practice
+* 🧑‍💻 Test environments only
+
+In production systems:
+🔐 OTP verification should be handled using secure backend APIs or mocked/stubbed services.
